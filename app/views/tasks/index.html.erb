@@ -1,8 +1,8 @@
 <h1>タスク一覧</h1>
 
 <ul>
-  <% @messages.each do |message| %>
-    <li><%= link_to message.id, message %> : <%= message.content %> &gt; <%= message.status %></li>
+  <% @tasks.each do |task| %>
+    <li><%= link_to task.id, task %> : <%= task.content %> &gt; <%= task.status %></li>
   <% end %>
 </ul>
 
