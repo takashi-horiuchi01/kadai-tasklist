@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :require_user_logged_in
-  before_action :correct_user, only: [:show, :edit, :update, :destory]
+  before_action :correct_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @pagy, @tasks = pagy(current_user.tasks.order(id: :desc))
@@ -39,7 +39,6 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = current_user.tasks.find_by(id: params[:id])
     @task.destroy
 
     flash[:success] = 'タスク は正常に削除されました'
